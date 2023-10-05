@@ -1,49 +1,32 @@
 .overlay {
-  /* Скрываем подложку  */
   opacity: 0;
   visibility: hidden;
 
-  // position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  // overflow-y: scroll;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 20;
-
-  pointer-events: none;
-  // transition: .3s all;
 }
 
 .modal {
-  /* Скрываем окна  */
-  // opacity: 0;
-  // visibility: hidden;
-
-  /*  Установаем ширину окна  */
-  // width: 100%;
-  //   width: 280px;
-
-  /*  Центрируем и задаем z-index */
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
-  display: block;
-  position: absolute;
-  z-index: 100;
+  z-index: 30;
   top: 50%;
   left: 50%;
-  // overflow-y: auto;
   transform: translate(-50%, -50%);
-  /* Должен быть выше чем у подложки*/
   background-color: var(--text-light);
+
   border: 2px solid var(--main-yellow);
   border-radius: 10px;
-  margin-top: 185px;
 }
 
 .modal.active,
 .overlay.active {
-  // overflow-y: scroll;
   opacity: 1;
   visibility: visible;
 }
@@ -52,11 +35,6 @@
   position: fixed;
   opacity: 0;
   visibility: hidden;
-  // background-color: var(--text-light);
-  // border: 2px solid var(--main-yellow);
-  // border-radius: 10px;
-
-  /* transition: transform var(--transition-dur-and-func), opacity var(--transition-dur-and-func); */
 }
 
 @media screen and (min-width: 768px) {
@@ -68,8 +46,9 @@
 
 @media screen and (max-width: 767px) {
   .buy-now-modal {
-    height: auto;
-    padding: 28px;
+    max-height: 620px;
+    overflow-y: scroll;
+    padding: 17px;
     width: 280px;
   }
 }
@@ -86,10 +65,9 @@
 
   padding: 0;
 
-  // cursor: pointer;
   border-color: transparent;
   background-color: var(--text-light);
-  /* transition: fill var(--transition-dur-and-func), background-color var(--transition-dur-and-func); */
+
 }
 
 @media screen and (min-width: 768px) {
@@ -98,12 +76,6 @@
     height: 24px;
   }
 }
-
-/* .js-modal-close:hover,
-.js-modal-close:focus {
-    fill: var(--light-text);
-    background-color: var(--pressed-state-color);
-}  */
 
 .buy-now-title {
   margin-bottom: 20px;
@@ -125,7 +97,6 @@
 @media screen and (max-width: 767px) {
   .img-list {
     flex-direction: column;
-    // gap: 20px;
   }
 }
 
@@ -146,7 +117,6 @@
 
   border-radius: 50%;
 
-  // margin-top: 20px;
 }
 @media screen and (max-width: 767px) {
   .img-item {
@@ -156,8 +126,6 @@
 
 .img-wrapper {
   position: relative;
-  // margin-bottom: 20px;
-
   padding-top: 7px;
 }
 
@@ -168,15 +136,9 @@
   margin-right: auto;
   z-index: 1;
 
-  // background-color: var(--green-line);
-
   border-radius: 50%;
 
   position: relative;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
-  // margin-bottom: 7px;
 }
 
 .ice-cream {
@@ -216,26 +178,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 35;
-
   margin-bottom: 7px;
 
-  // background-color: var(--main-yellow);
-  // background: linear-gradient(0deg, rgba(248, 210, 78, 0.7), rgba(248, 210, 78, 0.7));
-  // box-shadow: (0deg, rgba(248, 210, 78, 0.7), rgba(248, 210, 78, 0.7));
   border-radius: 50%;
 }
-
-// .img-item:first-child {
-//     background-color: var(--green-line);
-//     background: linear-gradient(0deg, rgba(156, 190, 143, 0.7), rgba(156, 190, 143, 0.7));
-//     box-shadow: 0px 5.26027px 19.726px rgba(10, 136, 23, 0.25);
-// }
-
-// .img-item.img-fone:last-child {
-//     background-color: var(--light-chocolate);
-//     background: (0deg, rgba(213, 117, 63, 0.7), rgba(213, 117, 63, 0.7));
-//     box-shadow: (0deg, rgba(213, 117, 63, 0.7), rgba(213, 117, 63, 0.7));
-// }
 
 .text-border {
   position: absolute;
@@ -251,14 +197,10 @@
 
   border: 2px solid var(--green-border);
   border-top: none;
-  // background-color: var(--light-yellow);
 
   border-radius: 15px;
 
   filter: drop-shadow(0px 5.26027px 19.726px rgba(212, 20, 67, 0.1));
-  // justify-content: center;
-  // // align-items: flex-end;
-  // align-self: end;
 }
 
 .coffee {
@@ -274,11 +216,6 @@
 }
 
 .text-label {
-  // padding-top: 96px;
-  // padding-bottom: 20px;
-  // padding-left: 16px;
-  // padding-right: 16px;
-  // position: absolute;
   bottom: 20px;
   left: 16px;
 
@@ -293,17 +230,6 @@
 
   color: var(--text-dark);
 }
-
-// .img-item .text-border:first-child {
-//     border: 2px solid var(--green-border);
-//     border-top: none;
-//     background-color: var(--light-yellow);
-// }
-
-// .img-item .text-border:last-child {
-//     border: 2px solid var(--chocolate);
-
-// }
 
 .buy-now-modal-form {
   display: flex;
@@ -333,7 +259,6 @@
 .modal-form-input {
   width: 100%;
   height: 32px;
-  /* padding-left: 38px; */
   padding-top: 8px;
   padding-left: 12px;
   padding-bottom: 8px;
@@ -348,7 +273,6 @@
   border-radius: 10px;
   background-color: rgba(248, 210, 78, 0.1);
 
-  /* transition: border-color var(--transition-dur-and-func); */
 }
 
 .buy-now-modal-form-field-comment {
@@ -372,13 +296,7 @@
   border: 1px solid var(--main-green);
   border-radius: 10px;
   background-color: rgba(248, 210, 78, 0.1);
-  /* transition: border-color var(--transition-dur-and-func); */
 }
-
-// .modal-form-message:focus {
-//   // outline: none;
-//   // border: var(--button-green);
-// }
 
 .modal-form-message::placeholder {
   font-family: Montserrat, sans-serif;
@@ -412,8 +330,6 @@
   background-color: var(--main-yellow);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
-  // cursor: pointer;
-  /* transition: background-color var(--transition-dur-and-func), box-shadow var(--transition-dur-and-func);*/
 }
 
 .modal-form-submit:hover,
@@ -432,51 +348,34 @@
 /* MODAL INGREDIENTS */
 
 .ingredients-modal {
-  // position: absolute;
-  // top: 50%;
-  // left: 50%;
-  // width: 280px;
   opacity: 0;
   visibility: hidden;
-  // max-height: 968px;
-  // width: 100%;
-  // height: 100%;
-  padding-top: 28px;
-  padding-bottom: 28px;
-  padding-left: 20px;
-  padding-right: 20px;
+  max-height: 600px;
+  margin-top: 0px;
+  padding: 28px 28px 20px 20px;
   top: 50%;
   left: 50%;
-  position: fixed;
 
+  overflow-y: auto;
   transform: translate(-50%, -50%);
 
-  // background-color: var(--text-light);
-  // border: 2px solid var(--main-yellow);
-  // border-radius: 10px;
-
-  /* transition: transform var(--transition-dur-and-func), opacity var(--transition-dur-and-func); */
 }
+
 @media screen and (min-width: 768px) {
   .ingredients-modal {
     padding-left: 40px;
     padding-right: 40px;
     width: 568px;
+    max-height: 600px;
   }
 }
 
 @media screen and (max-width: 427px) {
   .ingredients-modal {
     width: 90%;
-    height: auto;
+    max-height: 600px;
   }
 }
-
-/* .js-modal-close:hover,
-.js-modal-close:focus {
-    fill: var(--light-text);
-    background-color: var(--pressed-state-color);
-}  */
 
 .ingredients-title {
   margin-bottom: 20px;
@@ -515,9 +414,6 @@
   border-radius: 50%;
 
   position: relative;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
   margin-bottom: 7px;
 }
 
@@ -532,7 +428,6 @@
 .value-list {
   display: flex;
   align-items: center;
-  // column-gap: 9px;
   gap: 9px;
   justify-content: center;
 
@@ -547,7 +442,6 @@
 
 .value-item {
   position: relative;
-  // flex-basis: calc((100% - 27px)/4);
 
   width: 53px;
   height: 72px;
@@ -585,16 +479,10 @@
 }
 
 .dimension {
-  // position: absolute;
   margin-bottom: 1px;
   text-align: center;
   margin-top: 8px;
 
-  // width: 53px;
-  // height: 72px;
-
-  // border: 2px solid var(--green-line);
-  // border-radius: 40px;
   font-weight: 400;
   font-size: 10px;
   line-height: 1.2;
@@ -683,7 +571,6 @@
 .ingredients-modal-form-input {
   width: 100%;
   height: 32px;
-  /* padding-left: 38px; */
   padding: 11px 10px;
   @media screen and (min-width: 768px) {
     padding-left: 16px;
@@ -693,7 +580,6 @@
   border-radius: 10px;
   background-color: rgba(248, 210, 78, 0.1);
 
-  /* transition: border-color var(--transition-dur-and-func); */
 }
 
 .ingredients-modal-form-field-comment {
@@ -721,13 +607,8 @@
   border: 1px solid var(--main-green);
   border-radius: 10px;
   background-color: rgba(248, 210, 78, 0.1);
-  /* transition: border-color var(--transition-dur-and-func); */
 }
 
-// .ingredients-modal-form-message:focus {
-//   outline: none;
-//   border: var(--button-green);
-// }
 
 .ingredients-modal-form-message::placeholder {
   font-family: Montserrat, sans-serif;
@@ -761,9 +642,6 @@
   background-color: var(--main-yellow);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
-  // cursor: pointer;
-
-  /* transition: background-color var(--transition-dur-and-func), box-shadow var(--transition-dur-and-func);*/
 }
 
 .ingredients-modal-form-submit:hover,
@@ -779,30 +657,7 @@
   background-color: var(--button-grey);
 }
 
-/* < !-- VIDEO_MODAL --> */
-// .js-overlay-modal {
-//     position: fixed;
-//     left: 0;
-//     z-index: 100;
-//     width: 100%;
-//     height: 100%;
-//     overflow-y: scroll;
-//     background-color: var(--text-light);
-
-//     /* transition: opacity var(--transition-dur-and-func), visibility var(--transition-dur-and-func); */
-// }
-
-// .js-overlay-modal.is-hidden {
-//     opacity: 0;
-//     visibility: hidden;
-//     pointer-events: none;
-// }
-
 .read-more-modal {
-  // position: absolute;
-  // top: 50%;
-  // left: 50%;
-  // width: 280px;
   opacity: 0;
   visibility: hidden;
   height: 459px;
@@ -811,15 +666,8 @@
   left: 50%;
   width: 100%;
   position: fixed;
-
-  // transform: translate(-50%, -50%);
-
-  // background-color: var(--text-light);
-  // border: 2px solid var(--main-yellow);
-  // border-radius: 10px;
-
-  /* transition: transform var(--transition-dur-and-func), opacity var(--transition-dur-and-func); */
 }
+
 @media screen and (max-width: 767px) {
   .read-more-modal {
     width: 280px;
@@ -850,12 +698,6 @@
     margin-bottom: 32px;
   }
 }
-
-/* .js-modal-close:hover,
-.js-modal-close:focus {
-    fill: var(--light-text);
-    background-color: var(--pressed-state-color);
-}  */
 
 .read-more-title {
   font-family: Seymour One, sans-serif;
